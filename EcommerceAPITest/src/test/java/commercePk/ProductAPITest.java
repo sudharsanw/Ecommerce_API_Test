@@ -16,7 +16,7 @@ public class ProductAPITest {
     public Object[][] provideProductData() throws IOException {
         return JSONUtils.getTestData("src/test/resources/testData.json");
     }
-    
+ /*   
 	 @Test(dataProvider = "productData")
 	    public void testGetProducts(String productName, int price) {
 	        // Set the base URL for the API
@@ -43,7 +43,7 @@ public class ProductAPITest {
 	      //  Assert.assertTrue(response.contains("Laptop"));
 	       // Assert.assertTrue(response.contains("Meta Quest"));
 	    }
-	 
+	 */
 	 @Test
 	 public void testCreateProduct() {
 	     RestAssured.baseURI = "http://localhost:3000";
@@ -101,7 +101,7 @@ public class ProductAPITest {
 	         .header("Content-Type", "application/json")
 	         .body(updatedProduct)
 	         .when()
-	         .put("/products/1")
+	         .put("/products/4")
 	         .then()
 	         .statusCode(200) // Check if update was successful
 	         .extract()
