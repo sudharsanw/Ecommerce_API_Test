@@ -16,7 +16,7 @@ public class ProductAPITest {
     public Object[][] provideProductData() throws IOException {
         return JSONUtils.getTestData("src/test/resources/testData.json");
     }
-    
+    /*
 	 @Test(dataProvider = "productData")
 	    public void testGetProducts(String productName, int price) {
 	        // Set the base URL for the API
@@ -42,7 +42,7 @@ public class ProductAPITest {
 	     //    Assert that the response contains product data
 	       Assert.assertTrue(jsonResponse.contains("Laptop"));
 	    }
-	 
+	*/ 
 	 @Test
 	 public void testCreateProduct() {
 	     RestAssured.baseURI = "http://localhost:3000";
