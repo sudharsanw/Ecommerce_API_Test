@@ -1,7 +1,0 @@
-{
-  "products": [
-    { "name": "Smartwatch", "price": 299 },
-    { "name": "Headphones", "price": 199 },
-    { "name": "Keyboard", "price": 99 }
-  ]
-}
