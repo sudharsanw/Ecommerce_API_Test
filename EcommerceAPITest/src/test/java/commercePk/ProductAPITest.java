@@ -36,12 +36,11 @@ public class ProductAPITest {
 	                .extract()
 	                .response();
 
-	      //  String jsonResponse = response.asString();
-	      //  Assert.assertTrue(jsonResponse.contains(productName));
+	       String jsonResponse = response.asString();
+	       Assert.assertTrue(jsonResponse.contains(productName));
 	        
-	        // Assert that the response contains product data
-	      //  Assert.assertTrue(response.contains("Laptop"));
-	       // Assert.assertTrue(response.contains("Meta Quest"));
+	     //    Assert that the response contains product data
+	       Assert.assertTrue(jsonResponse.contains("Laptop"));
 	    }
 	 
 	 @Test
@@ -63,10 +62,10 @@ public class ProductAPITest {
 	         .response();
 
 	     // Extract response as string
-	   //  String jsonResponse = response.asString();
+	   String jsonResponse = response.asString();
 	     
 	     // Assert response contains product details
-	    // Assert.assertTrue(jsonResponse.contains("Smartwatch"));
+	    Assert.assertTrue(jsonResponse.contains("Smartwatch"));
 	 }
 
 	 @Test
@@ -83,10 +82,10 @@ public class ProductAPITest {
 	         .response();
 
 	     // Extract response as string
-	   //  String jsonResponse = response.asString();
+	    String jsonResponse = response.asString();
 	     
 	     // Assert response contains product details
-	    // Assert.assertTrue(jsonResponse.contains("Laptop"));
+	     Assert.assertTrue(jsonResponse.contains("Laptop"));
 	 }
 
 	 @Test
@@ -94,14 +93,14 @@ public class ProductAPITest {
 	     RestAssured.baseURI = "http://localhost:3000";
 
 	     // Updated product data
-	     String updatedProduct = "{ \"name\": \"Headphones\", \"price\": 999 }";
+	     String updatedProduct = "{ \"name\": \"Walking stick\", \"price\": 250 }";
 
 	     // Send PUT request
 	     Response response = RestAssured.given()
 	         .header("Content-Type", "application/json")
 	         .body(updatedProduct)
 	         .when()
-	         .put("/products/1")
+	         .put("/products/3")
 	         .then()
 	         .statusCode(200) // Check if update was successful
 	         .extract()
@@ -111,7 +110,7 @@ public class ProductAPITest {
 	     String jsonResponse = response.asString();
 	     
 	     // Assert new price is reflected
-	    // Assert.assertTrue(jsonResponse.contains("999"));
+	    Assert.assertTrue(jsonResponse.contains("250"));
 	 }
 
 	 @Test
